@@ -15,6 +15,10 @@ public interface TransferenciaRepository extends JpaRepository<Transferencia, Lo
 
     List<Transferencia> findByContaIdConta(Long numeroConta);
 
+    @Query(value = "SELECT * FROM transferencia " +
+            "WHERE data_transferencia BETWEEN :dataInicio AND :dataFim " +
+            "AND conta_id = :numeroConta",
+            nativeQuery = true)
     List<Transferencia> findByDataTransferenciaBetweenAndContaIdConta(OffsetDateTime dataInicio,OffsetDateTime dataFim, Long numeroConta);
 
     List<Transferencia> findByNomeOperadorTransacaoAndContaIdConta(String nomeOperador, Long numeroConta);

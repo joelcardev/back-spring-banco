@@ -1,7 +1,5 @@
 package br.com.banco.resources;
 
-import java.time.OffsetDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,12 +40,7 @@ public class TransferenciaResource {
             @RequestParam("dataInicio") String dataInicioStr, @RequestParam("dataFim") String dataFimStr,
             @RequestParam("numeroConta") Long numeroConta) {
 
-        OffsetDateTime dataInicio = OffsetDateTime.parse(dataInicioStr.trim(),
-                DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss XXX"));
-        OffsetDateTime dataFim = OffsetDateTime.parse(dataFimStr.trim(),
-                DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss XXX"));
-
-        List<TransferenciaDTO> transferencias = transferenciaService.getTransferenciasByPeriodo(dataInicio, dataFim,
+        List<TransferenciaDTO> transferencias = transferenciaService.getTransferenciasByPeriodo(dataInicioStr, dataFimStr,
                 numeroConta);
         return ResponseEntity.ok(transferencias);
     }
@@ -66,12 +59,9 @@ public class TransferenciaResource {
             @RequestParam("dataInicio") String dataInicioStr, @RequestParam("dataFim") String dataFimStr,
             @RequestParam("nomeOperador") String nomeOperador, @RequestParam("numeroConta") Long numeroConta) {
 
-        OffsetDateTime dataInicio = OffsetDateTime.parse(dataInicioStr.trim(),
-                DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss XXX"));
-        OffsetDateTime dataFim = OffsetDateTime.parse(dataFimStr.trim(),
-                DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss XXX"));
+       
 
-        List<TransferenciaDTO> transferencias = transferenciaService.getTransferenciasByTodosFiltro(dataInicio, dataFim,
+        List<TransferenciaDTO> transferencias = transferenciaService.getTransferenciasByTodosFiltro(dataInicioStr, dataFimStr,
                 nomeOperador, numeroConta);
         return ResponseEntity.ok(transferencias);
     }
