@@ -40,15 +40,15 @@ public class TransferenciaResource {
             @RequestParam("dataInicio") String dataInicioStr, @RequestParam("dataFim") String dataFimStr,
             @RequestParam("numeroConta") Long numeroConta) {
 
-        List<TransferenciaDTO> transferencias = transferenciaService.getTransferenciasByPeriodo(dataInicioStr, dataFimStr,
-                numeroConta);
+        List<TransferenciaDTO> transferencias = transferenciaService.getTransferenciasByPeriodo(dataInicioStr,
+                dataFimStr, numeroConta);
         return ResponseEntity.ok(transferencias);
     }
 
     @GetMapping("/operador")
     public ResponseEntity<List<TransferenciaDTO>> getTransferenciasByNomeOperador(
             @RequestParam("nomeOperador") String nomeOperador, @RequestParam("numeroConta") Long numeroConta) {
-        
+
         List<TransferenciaDTO> transferencias = transferenciaService.getTransferenciasByNomeOperador(nomeOperador,
                 numeroConta);
         return ResponseEntity.ok(transferencias);
@@ -59,18 +59,15 @@ public class TransferenciaResource {
             @RequestParam("dataInicio") String dataInicioStr, @RequestParam("dataFim") String dataFimStr,
             @RequestParam("nomeOperador") String nomeOperador, @RequestParam("numeroConta") Long numeroConta) {
 
-       
-
-        List<TransferenciaDTO> transferencias = transferenciaService.getTransferenciasByTodosFiltro(dataInicioStr, dataFimStr,
-                nomeOperador, numeroConta);
+        List<TransferenciaDTO> transferencias = transferenciaService.getTransferenciasByTodosFiltro(dataInicioStr,
+                dataFimStr, nomeOperador, numeroConta);
         return ResponseEntity.ok(transferencias);
     }
-    
+
     @GetMapping("/saldo-total/{numeroConta}")
     public ResponseEntity<Double> getSaldoTotalTransacoes(@PathVariable Long numeroConta) {
         double saldoTotal = transferenciaService.getSaldoTotalTransacoes(numeroConta);
         return ResponseEntity.ok(saldoTotal);
     }
-
 
 }

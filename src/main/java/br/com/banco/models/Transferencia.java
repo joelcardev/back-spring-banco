@@ -1,9 +1,7 @@
 package br.com.banco.models;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -29,9 +27,7 @@ import lombok.Setter;
 @Table(name = "transferencia")
 public class Transferencia implements Serializable {
 
-    /**
-     * 
-     */
+
     private static final long serialVersionUID = 1L;
 
     @Id

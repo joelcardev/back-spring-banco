@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "b03b6ebb-d4a1-4d60-97cb-1f15412ff5be",
+		"name": "apiBanco",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22876147"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/transferencias/periodo?dataInicio=2019-01-01%2012:00:00%20%2B03&dataFim=2019-01-02%2012:00:00%20%2B03",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/transferencias/periodo?dataInicio=2019-01-01%2000%3A00%3A00%20-02%3A00&dataFim=2021-08-08%2000%3A00%3A00%20-03%3A00&numeroConta=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transferencias",
+						"periodo"
+					],
+					"query": [
+						{
+							"key": "dataInicio",
+							"value": "2019-01-01%2000%3A00%3A00%20-02%3A00"
+						},
+						{
+							"key": "dataFim",
+							"value": "2021-08-08%2000%3A00%3A00%20-03%3A00"
+						},
+						{
+							"key": "numeroConta",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/transferencias",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/transferencias",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transferencias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/transferencias/operador?nomeOperador=Beltrano&numeroConta=1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/transferencias/operador?nomeOperador=Beltrano&numeroConta=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transferencias",
+						"operador"
+					],
+					"query": [
+						{
+							"key": "nomeOperador",
+							"value": "Beltrano"
+						},
+						{
+							"key": "numeroConta",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/transferencias/conta/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/transferencias/conta/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transferencias",
+						"conta",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/transferencias/todos-filtros?nomeOperador=Beltrano&dataInicio=2019-01-01%2000%3A00%3A00%20-02%3A00&dataFim=2021-08-08%2000%3A00%3A00%20-03%3A00&numeroConta=1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/transferencias/todos-filtros?nomeOperador=Beltrano&dataInicio=2019-01-01%2000%3A00%3A00%20-02%3A00&dataFim=2021-08-08%2000%3A00%3A00%20-03%3A00&numeroConta=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transferencias",
+						"todos-filtros"
+					],
+					"query": [
+						{
+							"key": "nomeOperador",
+							"value": "Beltrano"
+						},
+						{
+							"key": "dataInicio",
+							"value": "2019-01-01%2000%3A00%3A00%20-02%3A00"
+						},
+						{
+							"key": "dataFim",
+							"value": "2021-08-08%2000%3A00%3A00%20-03%3A00"
+						},
+						{
+							"key": "numeroConta",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
